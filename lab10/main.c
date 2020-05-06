@@ -30,25 +30,25 @@ typedef struct Head
 } Head;
 
 /* function to split string to array by separator */
-char **simple_split(char *str, int length, char sep);//разделяем текст для записи его в структуру
+char **simple_split(char *str, int length, char sep);//СЂР°Р·РґРµР»СЏРµРј С‚РµРєСЃС‚ РґР»СЏ Р·Р°РїРёСЃРё РµРіРѕ РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ
 
 /* function to print header string without data */
 void print_header();
 
 /* function to output structure fields on console */
-void struct_out(animals *str0);//выводим структуру
+void struct_out(animals *str0);//РІС‹РІРѕРґРёРј СЃС‚СЂСѓРєС‚СѓСЂСѓ
 
-animals *create_node(char **str, int numb);//создаём элемент списка
+animals *create_node(char **str, int numb);//СЃРѕР·РґР°С‘Рј СЌР»РµРјРµРЅС‚ СЃРїРёСЃРєР°
 
-Head *make_head();//создаём голову списка
+Head *make_head();//СЃРѕР·РґР°С‘Рј РіРѕР»РѕРІСѓ СЃРїРёСЃРєР°
 
 void node_free(Head **head);
 
-void node_out(Head **head);//выводим список
+void node_out(Head *head);//РІС‹РІРѕРґРёРј СЃРїРёСЃРѕРє
 
-void delete_penultimate(Head **head, int n, animals *p);//удаляем предпоследний элемент
+void delete_penultimate(Head *head, int n, animals *p);//СѓРґР°Р»СЏРµРј РїСЂРµРґРїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚
 
-void free_nodes(Head **head);//отчистка памяти
+void free_nodes(Head *head);//РѕС‚С‡РёСЃС‚РєР° РїР°РјСЏС‚Рё
 
 int main()
 {
@@ -76,11 +76,11 @@ int main()
     if (df != NULL)
     {
         n = 0;
-        ddd = make_head();//создаём голову списка
-        while (fgets(s1, maxlen, df) != NULL)//считаем кол-во строк
+        ddd = make_head();//СЃРѕР·РґР°С‘Рј РіРѕР»РѕРІСѓ СЃРїРёСЃРєР°
+        while (fgets(s1, maxlen, df) != NULL)//СЃС‡РёС‚Р°РµРј РєРѕР»-РІРѕ СЃС‚СЂРѕРє
             n++;
 
-        rewind(df);//после подсчёта строчек переводим указатель на начало
+        rewind(df);//РїРѕСЃР»Рµ РїРѕРґСЃС‡С‘С‚Р° СЃС‚СЂРѕС‡РµРє РїРµСЂРµРІРѕРґРёРј СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РЅР°С‡Р°Р»Рѕ
 
         for (i = 0, count = 1; i < n; i++, count++)
         {
@@ -90,8 +90,8 @@ int main()
             slen = strlen(s1);
             s2 = simple_split(s1, slen, sep);
             node = create_node(s2, count);
-            //строчки до for считывают строчки, разделяют текст и создают из него элемент списка
-            if (i != 0)//если элемент не первый, то записываем его не в голову
+            //СЃС‚СЂРѕС‡РєРё РґРѕ for СЃС‡РёС‚С‹РІР°СЋС‚ СЃС‚СЂРѕС‡РєРё, СЂР°Р·РґРµР»СЏСЋС‚ С‚РµРєСЃС‚ Рё СЃРѕР·РґР°СЋС‚ РёР· РЅРµРіРѕ СЌР»РµРјРµРЅС‚ СЃРїРёСЃРєР°
+            if (i != 0)//РµСЃР»Рё СЌР»РµРјРµРЅС‚ РЅРµ РїРµСЂРІС‹Р№, С‚Рѕ Р·Р°РїРёСЃС‹РІР°РµРј РµРіРѕ РЅРµ РІ РіРѕР»РѕРІСѓ
                 p -> next = node;
             else
             {
@@ -106,8 +106,10 @@ int main()
     ddd -> tail = node;
     ddd -> inc = node -> numb;
 
-    node_out(&ddd);
+    choice = 1;
+    node_out(ddd);
     printf("\n");
+    p = ddd -> tail;
     while (choice == 1)
    {
         puts("Wanna delete penultimate struct?\n1 - Yes\n2 - No\n");
@@ -117,9 +119,9 @@ int main()
         {
             if (n != 1)
             {
-                delete_penultimate(&ddd, n, p);
+                delete_penultimate(ddd, n, p);
                 n--;
-                node_out(&ddd);
+                node_out(ddd);
             }
             else
             {
@@ -130,7 +132,7 @@ int main()
         else
             puts("Bye-bye");
    }
-   free_nodes(&ddd);
+   free_nodes(ddd);
    puts("Press any key when ready");
    getchar();
    getchar();
@@ -170,11 +172,11 @@ animals *create_node(char **str, int numb)
     return node;
 }
 
-void node_out(Head **head)
+void node_out(Head *head)
 {
     print_header();
     animals *node = NULL;
-    node = (head -> nose);
+    node = head -> nose;
 
     while (node != NULL)
     {
@@ -183,7 +185,7 @@ void node_out(Head **head)
     }
 }
 
-void delete_penultimate(Head **head, int n, animals *p)
+void delete_penultimate(Head *head, int n, animals *p)
 {
     if (head -> tail == head -> nose)
     {
@@ -202,7 +204,7 @@ void delete_penultimate(Head **head, int n, animals *p)
         head -> tail -> numb = head -> tail -> numb - 1;
     }
 
-    else//если осталось 2 элемента, то мы не можем использовать верхний вариант, поэтому просто "носу" присваиваем "хвост"
+    else//РµСЃР»Рё РѕСЃС‚Р°Р»РѕСЃСЊ 2 СЌР»РµРјРµРЅС‚Р°, С‚Рѕ РјС‹ РЅРµ РјРѕР¶РµРј РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РІРµСЂС…РЅРёР№ РІР°СЂРёР°РЅС‚, РїРѕСЌС‚РѕРјСѓ РїСЂРѕСЃС‚Рѕ "РЅРѕСЃСѓ" РїСЂРёСЃРІР°РёРІР°РµРј "С…РІРѕСЃС‚"
     {
         head -> nose = head -> tail;
         head -> nose -> numb = head -> nose -> numb - 1;
@@ -271,7 +273,7 @@ char **simple_split(char *str, int length, char sep)
      }
      return str_array;
 }
-void free_nodes(Head **head)
+void free_nodes(Head *head)
 {
     animals *p;
     if (head -> nose == head -> tail)
