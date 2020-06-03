@@ -1,0 +1,147 @@
+# depslib dependency file v1.0
+1591172736 source:c:\users\rita skeeter\desktop\lab11\main.c
+	<stdio.h>
+	<stdlib.h>
+	"headers/structs.h"
+	"headers/nodeFunctions.h"
+	"headers/structFunctions.h"
+	"headers/textFunctions.h"
+
+1591016813 c:\users\rita skeeter\desktop\lab11\headers\structs.h
+	<stdlib.h>
+
+1591016813 source:c:\users\rita skeeter\desktop\lab11\headers\structs.h
+	<stdlib.h>
+
+1591172728 source:c:\users\rita skeeter\desktop\lab11\headers\nodefunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"textFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591172728 c:\users\rita skeeter\desktop\lab11\headers\nodefunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"textFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591020532 c:\users\rita skeeter\desktop\lab11\headers\structfunctions.h
+	"structs.h"
+	"nodeFunctions.h"
+	"textFunctions.h"
+	"structs.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591020532 source:c:\users\rita skeeter\desktop\lab11\headers\structfunctions.h
+	"structs.h"
+	"nodeFunctions.h"
+	"textFunctions.h"
+	"structs.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591015278 source:c:\users\rita skeeter\desktop\lab11\headers\textfunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"nodeFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591172743 source:c:\users\rita skeeter\desktop\lab11\nodefunctions.c
+	"headers/nodeFunctions.h"
+
+1591104431 source:c:\users\rita skeeter\desktop\lab11\structfunctions.c
+	"headers/structFunctions.h"
+
+1591021224 source:c:\users\rita skeeter\desktop\lab11\textfunctions.c
+	"headers/textFunctions.h"
+
+1591015278 c:\users\rita skeeter\desktop\lab11\headers\textfunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"nodeFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591172728 source:c:\users\rita skeeter\desktop\lab12\headers\nodefunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"textFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591016813 c:\users\rita skeeter\desktop\lab12\headers\structs.h
+	<stdlib.h>
+
+1591020532 c:\users\rita skeeter\desktop\lab12\headers\structfunctions.h
+	"structs.h"
+	"nodeFunctions.h"
+	"textFunctions.h"
+	"structs.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591172728 c:\users\rita skeeter\desktop\lab12\headers\nodefunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"textFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591015278 c:\users\rita skeeter\desktop\lab12\headers\textfunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"nodeFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591020532 source:c:\users\rita skeeter\desktop\lab12\headers\structfunctions.h
+	"structs.h"
+	"nodeFunctions.h"
+	"textFunctions.h"
+	"structs.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591016813 source:c:\users\rita skeeter\desktop\lab12\headers\structs.h
+	<stdlib.h>
+
+1591015278 source:c:\users\rita skeeter\desktop\lab12\headers\textfunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"nodeFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591104431 source:c:\users\rita skeeter\desktop\lab12\structfunctions.c
+	"headers/structFunctions.h"
+
+1591021224 source:c:\users\rita skeeter\desktop\lab12\textfunctions.c
+	"headers/textFunctions.h"
+
+1591183251 source:c:\users\rita skeeter\desktop\lab12\main.c
+	<stdio.h>
+	<stdlib.h>
+	"headers/structs.h"
+	"headers/nodeFunctions.h"
+	"headers/structFunctions.h"
+	"headers/textFunctions.h"
+
+1591185901 source:c:\users\rita skeeter\desktop\lab12\nodefunctions.c
+	"headers/nodeFunctions.h"
+
