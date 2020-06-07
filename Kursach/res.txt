@@ -1,0 +1,25 @@
+|    Triton |Amphibians |      10 |  2.300000 |  0.300000 |
+|     Stork |     Birds |       8 |  1.300000 |  1.500000 |
+|      Bear |   Mammals |      50 |160.000000 | 70.000000 |
+|      Toad |Amphibians |       5 | 10.000000 |  0.500000 |
+|     Perch |    Fishes |       3 | 50.000000 |  6.000000 |
+|       Elk |   Mammals |      20 |140.000000 | 50.000000 |
+|    Canary |     Birds |      10 |  4.000000 |  0.100000 |
+|       Dog |   Mammals |      15 |100.000000 | 20.000000 |
+|     Horse |   Mammals |      30 | 70.000000 |  1.400000 |
+|     Sheep |   Mammals |      15 | 35.000000 |  1.000000 |
+|      Goat |   Mammals |      14 | 25.000000 |  1.000000 |
+|  Chichken |     Birds |       3 |  4.000000 |  0.300000 |
+|    Rabbit |   Mammals |       4 |  3.000000 |  0.500000 |
+| Crocodile |Amphibians |      40 | 45.000000 |  0.400000 |
+|       Fox |   Mammals |      10 | 12.000000 |  0.600000 |
+|    Jaguar |   Mammals |      15 | 35.000000 |  1.000000 |
+|     Mouse |   Mammals |      10 |  4.000000 |  0.100000 |
+|     Tiger |   Mammals |       5 | 10.000000 |  0.500000 |
+|      Wolf |   Mammals |      10 | 15.000000 |  0.500000 |
+|       Yak |   Mammals |     100 | 43.000000 |  1.200000 |
+|     Zebra |   Mammals |      13 | 30.000000 |  1.000000 |
+|  Scorpion | Arachnida |       1 |  0.100000 |  0.050000 |
+|     Snake |Amphibians |       5 |  3.000000 |  0.200000 |
+|    Lizard |Amphibians |       3 |  1.000000 |  0.400000 |
+|  Tortoise |Amphibians |      60 | 20.000000 |  0.600000 |

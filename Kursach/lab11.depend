@@ -1,0 +1,98 @@
+# depslib dependency file v1.0
+1591542659 source:c:\users\rita skeeter\desktop\kursach\headers\nodefunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"textFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591016813 c:\users\rita skeeter\desktop\kursach\headers\structs.h
+	<stdlib.h>
+
+1591547006 c:\users\rita skeeter\desktop\kursach\headers\structfunctions.h
+	"structs.h"
+	"nodeFunctions.h"
+	"textFunctions.h"
+	"structs.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591542659 c:\users\rita skeeter\desktop\kursach\headers\nodefunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"textFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591557503 c:\users\rita skeeter\desktop\kursach\headers\textfunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"nodeFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591547006 source:c:\users\rita skeeter\desktop\kursach\headers\structfunctions.h
+	"structs.h"
+	"nodeFunctions.h"
+	"textFunctions.h"
+	"structs.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591016813 source:c:\users\rita skeeter\desktop\kursach\headers\structs.h
+	<stdlib.h>
+
+1591557503 source:c:\users\rita skeeter\desktop\kursach\headers\textfunctions.h
+	"structs.h"
+	"structFunctions.h"
+	"nodeFunctions.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1591562704 source:c:\users\rita skeeter\desktop\kursach\main.c
+	<stdio.h>
+	<stdlib.h>
+	"headers/structs.h"
+	"headers/nodeFunctions.h"
+	"headers/structFunctions.h"
+	"headers/textFunctions.h"
+	"headers/Menu.h"
+
+1591564053 source:c:\users\rita skeeter\desktop\kursach\structfunctions.c
+	"headers/structFunctions.h"
+
+1591557544 source:c:\users\rita skeeter\desktop\kursach\textfunctions.c
+	"headers/textFunctions.h"
+
+1591562637 source:c:\users\rita skeeter\desktop\kursach\nodefunctions.c
+	"headers/nodeFunctions.h"
+
+1591559472 c:\users\rita skeeter\desktop\kursach\headers\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"structs.h"
+	"nodeFunctions.h"
+	"structFunctions.h"
+	"textFunctions.h"
+
+1591559933 source:c:\users\rita skeeter\desktop\kursach\menu.c
+	"headers/Menu.h"
+
+1591559472 source:c:\users\rita skeeter\desktop\kursach\headers\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"structs.h"
+	"nodeFunctions.h"
+	"structFunctions.h"
+	"textFunctions.h"
+
