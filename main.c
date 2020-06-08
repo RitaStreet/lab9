@@ -3,65 +3,77 @@
 #include <string.h>
 #include <ctype.h>
 #define OS_TYPE linux
-#ifdef OS_TYPE
 #define maxlen 256
-#endif // OS_TYPE
-#include "h_files\struct.h"
+
+typedef struct stroka
+{
+    char *str;
+    struct stroka *next;
+}stroka;
+
+stroka *push(stroka *head, char *s1, int slen)//функци€ добавл€юща€ элемент стека
+{
+    stroka *p = (stroka*)malloc(sizeof(stroka));
+    p -> str = (char*)malloc(slen * sizeof(char));
+    if (p != NULL)
+    {
+        p -> next = head;
+        p -> str = s1;
+        head = p;//элемент становитс€ головой, тем самым занима€ первое место и сдвига€ предыдущую голову вперЄд на шаг
+    }
+    else
+        puts("Error!");
+    return head;
+}
+
+stroka *pop(stroka *head)//функци€ "удал€юща€" элемент стека
+{
+    if (head != NULL)
+        head = head -> next;//двигаем голову списка вперЄд на 1
+    else
+        puts("Error!");
+
+    return head;
+}
 
 int main()
 {
-    animals *node = NULL, *p = NULL;
-    head *ddd = NULL;
-    int slen, i, n, count, choice;
+    stroka *head = NULL;
+    FILE *df, *mf;
+    int sumstr, n, i, slen, *a = NULL;
     char s1[maxlen];
-    char **s2 = NULL;
-    char sep;
-    FILE *df;
+    sumstr = 0;
 
-    printf("Enter your separator symbol: \n");
-    scanf("%c", &sep);
-
-    if (sep != ';')
-    {
-        while (sep != ';')
-        {
-            puts("Enter right separator!");
-            scanf("%s", &sep);
-        }
-    }
-    df = fopen("csv.txt", "r");
+    df = fopen("csv.txt", "r");//считываем файл из чисел которого формируетс€ стек
+    mf = fopen("res.txt", "w");//создаЄм файл в который будут записаны нечЄтные числа
     if (df != NULL)
     {
         n = 0;
-        ddd = make_head();//создаЄм голову списка
-        while (fgets(s1, maxlen, df) != NULL)//считаем кол-во строк
-            n++;
+        while ((fgets(s1, maxlen, df)) != NULL) n++;
+        rewind(df);
+        a = malloc(n * sizeof(int));
 
-        rewind(df);//после подсчЄта строчек переводим указатель на начало
-
-        for (i = 0, count = 1; i < n; i++, count++)
+        for (i = 0; i < n; i++)
         {
             fgets(s1, maxlen, df);
             slen = strlen(s1);
             s1[slen - 1] = '\0';
             slen = strlen(s1);
-            s2 = simple_split(s1, slen, sep);
-            node = create_node(s2, count);
-            //строчки до for считывают строчки, раздел€ют текст и создают из него элемент списка
-            if (i != 0)//если элемент не первый, то записываем его не в голову
-                p -> next = node;
-            else
-            {
-                ddd -> nose = node;
-                ddd -> inc = count;
-            }
-
-            p = node;
+            a[i] = slen;
+            sumstr += slen;
+            head = push(head, s1, slen);//добавл€ем элемент в стек
+            printf("%s\n", head -> str);
+        }
+        head = pop(head);
+        head = pop(head);//удал€ем 2 элемента по заданию
+        while(head != NULL)
+        {
+            fprintf(mf, "%s\n", head -> str);
+            head = pop(head);
         }
     }
-    else puts("File error!");
-    ddd -> tail = node;
-    ddd -> inc = node -> numb;
-
+    sumstr = sumstr - a[n - 1] - a[n - 2];
+    printf("Dlina strok tekushego steka = %d", sumstr);
+    rewind(df);//переводим указатель дл€ красоты
     return 0;
 }
