@@ -11,25 +11,25 @@ typedef struct stroka
     struct stroka *next;
 }stroka;
 
-stroka *push(stroka *head, char *s1, int slen)//функция добавляющая элемент стека
+stroka *push(stroka *head, char *s1, int slen)//С„СѓРЅРєС†РёСЏ РґРѕР±Р°РІР»СЏСЋС‰Р°СЏ СЌР»РµРјРµРЅС‚ СЃС‚РµРєР°
 {
-    stroka *p = (stroka*)malloc(sizeof(stroka));
-    p -> str = (char*)malloc(slen * sizeof(char));
+    stroka *p = NULL;
+    p = (stroka*)malloc(sizeof(stroka));
     if (p != NULL)
     {
         p -> next = head;
-        p -> str = s1;
-        head = p;//элемент становится головой, тем самым занимая первое место и сдвигая предыдущую голову вперёд на шаг
+        strcpy(head -> str, s1);
+        head = p;//СЌР»РµРјРµРЅС‚ СЃС‚Р°РЅРѕРІРёС‚СЃСЏ РіРѕР»РѕРІРѕР№, С‚РµРј СЃР°РјС‹Рј Р·Р°РЅРёРјР°СЏ РїРµСЂРІРѕРµ РјРµСЃС‚Рѕ Рё СЃРґРІРёРіР°СЏ РїСЂРµРґС‹РґСѓС‰СѓСЋ РіРѕР»РѕРІСѓ РІРїРµСЂС‘Рґ РЅР° С€Р°Рі
     }
     else
         puts("Error!");
     return head;
 }
 
-stroka *pop(stroka *head)//функция "удаляющая" элемент стека
+stroka *pop(stroka *head)//С„СѓРЅРєС†РёСЏ "СѓРґР°Р»СЏСЋС‰Р°СЏ" СЌР»РµРјРµРЅС‚ СЃС‚РµРєР°
 {
     if (head != NULL)
-        head = head -> next;//двигаем голову списка вперёд на 1
+        head = head -> next;//РґРІРёРіР°РµРј РіРѕР»РѕРІСѓ СЃРїРёСЃРєР° РІРїРµСЂС‘Рґ РЅР° 1
     else
         puts("Error!");
 
@@ -44,8 +44,8 @@ int main()
     char s1[maxlen];
     sumstr = 0;
 
-    df = fopen("csv.txt", "r");//считываем файл из чисел которого формируется стек
-    mf = fopen("res.txt", "w");//создаём файл в который будут записаны нечётные числа
+    df = fopen("csv.txt", "r");//СЃС‡РёС‚С‹РІР°РµРј С„Р°Р№Р» РёР· С‡РёСЃРµР» РєРѕС‚РѕСЂРѕРіРѕ С„РѕСЂРјРёСЂСѓРµС‚СЃСЏ СЃС‚РµРє
+    mf = fopen("res.txt", "w");//СЃРѕР·РґР°С‘Рј С„Р°Р№Р» РІ РєРѕС‚РѕСЂС‹Р№ Р±СѓРґСѓС‚ Р·Р°РїРёСЃР°РЅС‹ РЅРµС‡С‘С‚РЅС‹Рµ С‡РёСЃР»Р°
     if (df != NULL)
     {
         n = 0;
@@ -61,19 +61,21 @@ int main()
             slen = strlen(s1);
             a[i] = slen;
             sumstr += slen;
-            head = push(head, s1, slen);//добавляем элемент в стек
+            head = push(head, s1, slen);//РґРѕР±Р°РІР»СЏРµРј СЌР»РµРјРµРЅС‚ РІ СЃС‚РµРє
             printf("%s\n", head -> str);
+
         }
         head = pop(head);
-        head = pop(head);//удаляем 2 элемента по заданию
+        head = pop(head);//СѓРґР°Р»СЏРµРј 2 СЌР»РµРјРµРЅС‚Р° РїРѕ Р·Р°РґР°РЅРёСЋ
         while(head != NULL)
         {
+            printf("%s\n", head -> str);
             fprintf(mf, "%s\n", head -> str);
             head = pop(head);
         }
     }
     sumstr = sumstr - a[n - 1] - a[n - 2];
     printf("Dlina strok tekushego steka = %d", sumstr);
-    rewind(df);//переводим указатель для красоты
+    rewind(df);//РїРµСЂРµРІРѕРґРёРј СѓРєР°Р·Р°С‚РµР»СЊ РґР»СЏ РєСЂР°СЃРѕС‚С‹
     return 0;
 }
